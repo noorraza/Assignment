@@ -50,3 +50,17 @@ int main()
 		}
 			
 	}
+	
+	
+	printf("\nProcesses in Lower Priority Queue:\n");
+	for(int y=0;y<lp;y++)
+	{
+	printf("Process Id: %d\n",lower_p[y].process_id);
+	}
+
+	printf("\nProcesses in Higher Priority Queue:\n");
+	for(int y=0;y<hp;y++)
+	{
+	printf("Process Id: %d\n",higher_p[y].process_id);
+	}
+}
