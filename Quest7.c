@@ -25,3 +25,12 @@ int main()
 	printf("Enter the total no. of processes: ");
 	scanf("%d",&nop);
 	int i=0;
+	while(i<nop)
+	{
+		printf("\nEnter Process Id for Process %d: ",i+1);
+		scanf("%d",&P[i].process_id);
+		printf("Enter the timing of I/O interaction: ");
+		scanf("%d",&P[i].IO_term);
+		i++;
+		
+	}
