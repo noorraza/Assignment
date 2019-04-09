@@ -16,3 +16,12 @@ struct Process
 	int process_id;
 	int IO_term;
 };
+
+int main()
+{
+	struct Process P[50],higher_p[50],lower_p[50];
+	int hp=0,lp=0;
+	int nop;
+	printf("Enter the total no. of processes: ");
+	scanf("%d",&nop);
+	int i=0;
