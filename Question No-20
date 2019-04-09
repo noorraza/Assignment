@@ -1,0 +1,20 @@
+/*There are 3 student processes and 1 teacher process. Students are supposed to do their
+assignments and they need 3 things for that pen, paper and question paper. The teacher
+has an infinite supply of all the three things. One students has pen,an other has paper and
+another has question paper. The teacher places two things on a shared table and the
+student having the third complementary thing makes the assignment and tells the teacher
+on completion. The teacher then places another two things out of the three and again the
+student having the third thing makes the assignment and tells the teacher on completion.
+This cycle continues. WAP to synchronize the teacher and the students.*/
+
+
+
+#include<stdio.h>
+#include<unistd.h>
+#include<semaphore.h>
+#include<pthread.h>
+#include<sys/types.h>
+#include<sys/wait.h>
+
+int pen=1000,question_paper=1000,paper=1000;		//Teacher process with infinite supply of all the three things(infinite means much in number)
+sem_t s1;
