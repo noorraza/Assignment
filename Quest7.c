@@ -34,3 +34,19 @@ int main()
 		i++;
 		
 	}
+	
+	for(int t=0,k=0;t<10,k<nop;t++,k++)
+	{	
+			
+		if(P[k].IO_term!=t)
+		{	
+			lower_p[lp]=P[k];
+			lp=lp+1;
+		}
+		else
+		{
+			higher_p[hp]=P[k];
+			hp=hp+1;
+		}
+			
+	}
