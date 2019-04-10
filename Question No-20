@@ -18,3 +18,14 @@ This cycle continues. WAP to synchronize the teacher and the students.*/
 
 int pen=1000,question_paper=1000,paper=1000;		//Teacher process with infinite supply of all the three things(infinite means much in number)
 sem_t s1;
+
+void *firststudent()                                //first student process
+	{
+	int paper=100;
+	sem_wait(&s1);
+	printf("\nFirst Student is using his own paper; pen and question paper are provided by the teacher\n");
+	printf("\nAssignment Completed by first Student and told to teacher\n\n");
+	pen=pen-1;
+	question_paper=question_paper-1;
+	sem_post(&s1);
+	}
