@@ -29,3 +29,14 @@ void *firststudent()                                //first student process
 	question_paper=question_paper-1;
 	sem_post(&s1);
 	}
+	
+void *secondstudent()                                 //second student process
+	{
+	int pen=100;
+	sem_wait(&s1);
+	printf("\nSecond student is using his own pen; paper and question paper provided by teacher\n\n");
+	printf("\nAssignment Completed by second Stusdent and told to teacher\n\n");
+	question_paper=question_paper-1;
+	paper=paper-1;
+	sem_post(&s1);
+	}
