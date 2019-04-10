@@ -52,3 +52,18 @@ void *thirdstudent()                                   //third student process
 	paper=paper-1;
 	sem_post(&s1);
 	}
+	
+	
+int main()
+{	
+	printf("\nSupplies with teacher in the starting when students did not start doing their assignment :\nPens: %d\nQuestion Papers: %d\nPapers: %d\n",pen,question_paper,paper);
+	pthread_t th1,th2,th3;
+	sem_init(&s,0,3);
+	pthread_create(&th1,NULL,firststudent,NULL);
+	pthread_create(&th2,NULL,secondstudent,NULL);
+	pthread_create(&th3,NULL,thirdstudent,NULL);
+	pthread_join(th1,NULL);
+	pthread_join(th2,NULL);
+	pthread_join(th3,NULL);
+	printf("\nSupplies left with teacher at the end when all the students have completed the assignment are:\nPens: %d\nQuestion Papers: %d\nPapers: %d\n\n\n",pen,question_paper,paper);
+}
